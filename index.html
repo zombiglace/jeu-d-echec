@@ -47,6 +47,18 @@
 </body>
     <script>
         const { Chess } = require('chess.js'); // Assurez-vous d'importer chess.js
+        .square:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#chessboard {
+    transition: transform 0.2s;
+}
+
+#chessboard:active {
+    transform: scale(0.98);
+}
 const game = new Chess();
 
 function handleSquareClick(index) {
