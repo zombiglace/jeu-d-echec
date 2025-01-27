@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu d'échecs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+  <style>
+    body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 2px solid #333;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.white {
+    background-color: #eee;
+}
+
+.black {
+    background-color: #333;
+    color: white;
+}
+  </style>
+<body>
+    <h1>Jeu d'échecs</h1>
+    <div id="chessboard"></div>
+    <button id="reset">Réinitialiser</button>
+    <script src="script.js"></script>
+</body>
+</html>
