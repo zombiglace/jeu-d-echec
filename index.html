@@ -46,6 +46,33 @@
     <script src="script.js"></script>
 </body>
     <script>
+        const { Chess } = require('chess.js'); // Assurez-vous d'importer chess.js
+const game = new Chess();
+
+function handleSquareClick(index) {
+    const piece = boardState[index];
+    const from = index;
+
+    if (piece) {
+        // Logique pour sélectionner une pièce
+        console.log(`Pièce sélectionnée: ${piece} à la case ${index}`);
+    } else {
+        const to = index;
+        const move = game.move({
+            from: game.SQUARES[from],
+            to: game.SQUARES[to],
+            promotion: 'q' // Promotion par défaut
+        });
+
+        if (move) {
+            boardState[to] = piece;
+            boardState[from] = '';
+            createBoard();
+        } else {
+            console.log('Mouvement invalide');
+        }
+    }
+}
         const board = document.getElementById('chessboard');
 const resetButton = document.getElementById('reset');
 
